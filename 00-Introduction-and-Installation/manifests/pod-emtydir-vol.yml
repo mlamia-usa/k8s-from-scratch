@@ -9,6 +9,13 @@ spec:
     command:
       - sleep
       - "3600"
+    resources:
+        requests:
+          cpu: "200m"
+          memory: "256Mi"
+        limits:
+          cpu: "1"
+          memory: "512Mi"
     volumeMounts:
     - mountPath: /test
       name: test

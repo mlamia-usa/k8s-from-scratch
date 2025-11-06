@@ -10,6 +10,13 @@ spec:
   containers:
     - name: nfs-client1
       image: centos:latest
+      resources:
+        requests:
+          cpu: "200m"
+          memory: "256Mi"
+        limits:
+          cpu: "1"
+          memory: "512Mi"
       command:
         - sleep
         - "3600"
@@ -18,6 +25,13 @@ spec:
           name: nfs-pv
     - name: nfs-client2
       image: centos:latest
+      resources:
+        requests:
+          cpu: "200m"
+          memory: "256Mi"
+        limits:
+          cpu: "1"
+          memory: "512Mi"
       command:
         - sleep
         - "3600"

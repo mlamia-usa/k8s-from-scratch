@@ -12,6 +12,13 @@ spec:
   containers:
     - image: httpd
       name: httpserver
+      resources:
+        requests:
+          cpu: "200m"
+          memory: "256Mi"
+        limits:
+          cpu: "1"
+          memory: "512Mi"
 ---
 kind: Pod
 apiVersion: v1
@@ -22,5 +29,20 @@ spec:
   containers:
     - image: nginx
       name: nginxserver
+      resources:
+        requests:
+          cpu: "200m"
+          memory: "256Mi"
+        limits:
+          cpu: "1"
+          memory: "512Mi"
     - image: nicolaka/netshoot
       name: netshoot
+      command: ["sleep", "infinity"]
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "128Mi"
+        limits:
+          cpu: "500m"
+          memory: "256Mi"
